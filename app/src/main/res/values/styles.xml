@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.CropStyle" parent="android:TextAppearance.DeviceDefault.Medium">
+        <item name="android:fontFamily">@font/benchnine</item>
+    </style>
+
+    <style name="TextAppearance.CropStyle.Large" parent="android:TextAppearance.DeviceDefault.Large">
+        <item name="android:fontFamily">@font/benchnine</item>
+    </style>
+
+    <style name="TextAppearance.CropStyle.Title" parent="android:TextAppearance.DeviceDefault.WindowTitle">
+        <item name="android:fontFamily">@font/benchnine</item>
+        <item name="android:color">@color/CropWhite</item>
+    </style>
+
+    <style name="TextAppearance.CropStyle.Hint" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:fontFamily">@font/benchnine</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="fontFamily">@font/benchnine</item>
+    </style>
+
+    <style name="Dialog.RoundedDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_rounded_corners_background</item>
+    </style>
+
+    <style name="TextAppearance.CalendarStyle" parent="android:TextAppearance.DeviceDefault.Medium">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/CropDarkGreen</item>
+    </style>
+
+    <style name="SpinnerCropStyle" parent = "android:Widget.Material.DropDownItem.Spinner">
+        <item name="android:textAppearance">@style/TextAppearance.CropStyle.Large</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="NavigationActive" parent="android:TextAppearance.DeviceDefault.Medium">
+        <item name="fontFamily">@font/benchnine</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NavigationInactive" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="fontFamily">@font/benchnine</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Bridge">
+
+    </style>
+</resources>

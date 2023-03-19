@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewEditCropTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/CropDarkGreen"
+        android:text="@string/edit_crop"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.CropStyle.Title"
+        android:textColor="@color/CropWhite"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEditCropCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@android:string/cancel"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditCropGerm" />
+
+    <Button
+        android:id="@+id/buttonEditCropDelete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/delete_crop"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditCropGerm" />
+
+    <Button
+        android:id="@+id/buttonEditCropSubmit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/submit"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEditCropCancel" />
+
+    <TextView
+        android:id="@+id/textViewEditCropName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crop_name"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropTitle" />
+
+    <TextView
+        android:id="@+id/textViewEditCropType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crop_type"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditCropName" />
+
+    <TextView
+        android:id="@+id/textViewEditCropSun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/sun_level"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditCropName" />
+
+    <Spinner
+        android:id="@+id/spinnerEditCropType"
+        style="@"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/crop_types"
+        android:fontFamily="@font/benchnine"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/textViewEditCropType"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropType" />
+
+    <Spinner
+        android:id="@+id/spinnerEditCropSun"
+        style="@"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/crop_sun_levels"
+        android:fontFamily="@font/benchnine"
+        android:minHeight="48dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewEditCropSun"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropSun" />
+
+    <EditText
+        android:id="@+id/editTextEditCropName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewEditCropName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropName" />
+
+    <TextView
+        android:id="@+id/textViewEditCropFrost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crop_days_before_frost"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEditCropType" />
+
+    <TextView
+        android:id="@+id/textViewEditCropGerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crop_germination_time"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditCropHarvest" />
+
+    <TextView
+        android:id="@+id/textViewEditCropHarvest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crop_harvest_time"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEditCropFrost" />
+
+    <TextView
+        android:id="@+id/textViewEditCropNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/crop_notes"
+        android:textAppearance="@style/TextAppearance.CropStyle"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEditCropSun" />
+
+    <EditText
+        android:id="@+id/editTextEditCropHarvest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/textViewEditCropHarvest"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropHarvest" />
+
+    <EditText
+        android:id="@+id/editTextEditCropGerm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/textViewEditCropGerm"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropGerm" />
+
+    <EditText
+        android:id="@+id/editTextEditCropNote"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextEditCropGerm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewEditCropNotes"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropNotes"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextEditCropFrost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEditCropHarvest"
+        app:layout_constraintStart_toStartOf="@+id/textViewEditCropFrost"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCropFrost" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

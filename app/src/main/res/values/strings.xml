@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Crop Calendar</string>
+    <string name="title_home">Home</string>
+    <string name="title_calendar">Crop Calendar</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_add">Add Crop</string>
+    <string name="crop_name">Crop Name</string>
+    <string name="crop_type">Crop Type</string>
+    <string name="crop_days_before_frost">Days to Plant Before Last Frost</string>
+    <string name="crop_germination_time">Days to Germination</string>
+    <string name="crop_harvest_time">Days to Harvest</string>
+    <string name="crop_notes">Crop Notes</string>
+    <string name="enter_text">Enter text…</string>
+    <string name="submit">Submit</string>
+    <string name="empty_field">Field is empty!</string>
+    <string name="complete_all_fields">Please complete all fields.</string>
+    <string name="crop_added">%s has been added!</string>
+    <string name="crop_exists">Crop already exists in database!</string>
+    <string-array name="crop_types">
+        <item>🍎 Fruits</item>
+        <item>🥦 Vegetables</item>
+        <item>🥔 Roots</item>
+        <item>🌾 Grains</item>
+        <item>🫚 Spices</item>
+        <item>🍯 Other</item>
+    </string-array>
+    <string-array name="crop_sun_levels">
+        <item>Full Sun</item>
+        <item>Partial Sun</item>
+        <item>Partial Shade</item>
+        <item>Full Shade</item>
+    </string-array>
+    <string name="sun_level">Sun Level</string>
+    <string name="filter_by_type">Filter By Type</string>
+    <string name="filter_by_name">Filter By Name</string>
+    <string name="crop_type_icon">Crop Icon</string>
+    <string name="plant">Plant</string>
+    <string name="germ">Germ</string>
+    <string name="harvest">Harvest</string>
+    <string name="crop_details">Crop Details</string>
+    <string name="filters">Filters</string>
+    <string name="clear_filters">Clear Filters</string>
+    <string name="view_all">View All</string>
+    <string name="no_changes">No changes made…</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="done">Done</string>
+    <string name="save_changes">Save changes?</string>
+    <string name="set_frost_date">Set Last Frost Date</string>
+    <string name="current_frost_date">Current Last Frost Date: %s</string>
+    <string name="show_sun_icons">Show Sun Level Icons</string>
+    <string name="no_results">No Results!</string>
+    <string name="details_germ_days">Days to Germinate: %d</string>
+    <string name="details_frost_days">Days to Plant Before Last Frost: %d</string>
+    <string name="details_harvest_days">Days until Harvest: %d</string>
+    <string name="edit_crop">Edit Crop</string>
+    <string name="delete_crop">Delete Crop</string>
+    <string name="sow_after_frost">Sow after Last Frost</string>
+</resources>

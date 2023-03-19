@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.add.AddFragment">
+
+    <ScrollView
+        android:id="@+id/scrollViewSettings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddCropSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAddCrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <TextView
+                android:id="@+id/textViewFrostDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crop_name"
+                android:textAppearance="@style/TextAppearance.CropStyle.Large" />
+
+            <EditText
+                android:id="@+id/editTextFrostDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enter_text"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.CropStyle" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:id="@+id/textViewCropType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/benchnine"
+                android:text="@string/crop_type"
+                android:textAppearance="@style/TextAppearance.CropStyle.Large" />
+
+            <Spinner
+                android:id="@+id/spinnerCropType"
+                style="@"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/crop_types"
+                android:fontFamily="@font/benchnine"
+                android:minHeight="48dp"
+                android:spinnerMode="dialog" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewFrost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crop_days_before_frost"
+                    android:textAppearance="@style/TextAppearance.CropStyle.Large"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/editTextCropFrost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/enter_text"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.CropStyle"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewFrost" />
+
+                <Switch
+                    android:id="@+id/switchSowAfterFrost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sow_after_frost"
+                    android:textAppearance="@style/TextAppearance.CropStyle.Hint"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewFrost"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewFrost" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:id="@+id/textViewGermination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crop_germination_time"
+                android:textAppearance="@style/TextAppearance.CropStyle.Large" />
+
+            <EditText
+                android:id="@+id/editTextGermination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enter_text"
+                android:inputType="number"
+                android:textAppearance="@style/TextAppearance.CropStyle" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:id="@+id/textViewHarvest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/crop_harvest_time"
+                android:textAppearance="@style/TextAppearance.CropStyle.Large" />
+
+            <EditText
+                android:id="@+id/editTextHarvest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enter_text"
+                android:inputType="number"
+                android:textAppearance="@style/TextAppearance.CropStyle" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:id="@+id/textViewCropSunAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sun_level"
+                android:textAppearance="@style/TextAppearance.CropStyle.Large" />
+
+            <Spinner
+                android:id="@+id/spinnerCropSunLevels"
+                style="@"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/crop_sun_levels"
+                android:fontFamily="@font/benchnine"
+                android:minHeight="48dp"
+                android:spinnerMode="dialog" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <TextView
+                android:id="@+id/textViewCropSun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crop_notes"
+                android:textAppearance="@style/TextAppearance.CropStyle.Large" />
+
+            <EditText
+                android:id="@+id/editTextMultiLineCropNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/enter_text"
+                android:inputType="textMultiLine"
+                android:textAppearance="@style/TextAppearance.CropStyle" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <Button
+                android:id="@+id/buttonAddCropSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="?attr/colorPrimarySurface"
+                android:fontFamily="@font/benchnine"
+                android:onClick="createCrop"
+                android:text="@string/submit"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:rippleColor="?attr/colorSecondary" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

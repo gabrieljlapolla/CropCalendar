@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RecyclerViewLayout"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:background="@null">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenterIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="206dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.16"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenterFirstThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="206dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.44"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenterSecondThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="206dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.72"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="206dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCropListName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autoSizeMaxTextSize="32dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/benchnine"
+        android:gravity="center"
+        android:text="@string/crop_name"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalCenter"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter80"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonCropListDetails"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        android:contentDescription="@string/crop_type"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalCenter"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_plant" />
+
+    <ImageButton
+        android:id="@+id/buttonCropListEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="?attr/colorPrimaryVariant"
+        android:contentDescription="@string/crop_details"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCropListDetails"
+        app:srcCompat="@drawable/ic_gears" />
+
+    <TextView
+        android:id="@+id/textCropHarvest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/benchnine"
+        android:text="@string/harvest"
+        android:textAppearance="@style/TextAppearance.CropStyle.Hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterSecondThird"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalCenter" />
+
+    <TextView
+        android:id="@+id/cropHarvestDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/benchnine"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterSecondThird"
+        app:layout_constraintTop_toBottomOf="@+id/textCropHarvest" />
+
+    <TextView
+        android:id="@+id/cropGermDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/benchnine"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterSecondThird"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterFirstThird"
+        app:layout_constraintTop_toBottomOf="@+id/textCropGerm" />
+
+    <TextView
+        android:id="@+id/textCropGerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/benchnine"
+        android:text="@string/germ"
+        android:textAppearance="@style/TextAppearance.CropStyle.Hint"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterSecondThird"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterFirstThird"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalCenter" />
+
+    <TextView
+        android:id="@+id/textCropPlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/benchnine"
+        android:text="@string/plant"
+        android:textAppearance="@style/TextAppearance.CropStyle.Hint"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterFirstThird"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterIcon"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalCenter" />
+
+    <TextView
+        android:id="@+id/cropPlantDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/benchnine"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterFirstThird"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterIcon"
+        app:layout_constraintTop_toBottomOf="@+id/textCropPlant" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="58dp"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imageViewSunLevel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontalCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter80"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
