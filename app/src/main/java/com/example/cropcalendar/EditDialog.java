@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -31,13 +34,19 @@ public class EditDialog extends Dialog implements DialogInterface.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_dialog);
-        Context context = getContext();
-
-
-        EditText name = findViewById(R.id.editTextEditCropName);
-        name.setText("sssssss");
         loadCropInfo();
-
+        Switch sowAfterFrostSwitch = findViewById(R.id.switchEditCropSowAfterFrost);
+        sowAfterFrostSwitch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            EditText frostEditText = findViewById(R.id.editTextEditCropFrost);
+            if (isChecked) {
+                frostEditText.setHint(R.string.sow_after_frost);
+                frostEditText.setError(null); // Clear any error
+                frostEditText.setEnabled(false);
+            } else {
+                frostEditText.setHint(R.string.enter_text);
+                frostEditText.setEnabled(true);
+            }
+        });
     }
 
     private void loadCropInfo() {
@@ -46,14 +55,50 @@ public class EditDialog extends Dialog implements DialogInterface.OnClickListene
         EditText harvest = findViewById(R.id.editTextEditCropHarvest);
         EditText germ = findViewById(R.id.editTextEditCropGerm);
         EditText notes = findViewById(R.id.editTextEditCropNote);
-        Spinner type = findViewById(R.id.spinnerEditCropType);
-        Spinner sun = findViewById(R.id.spinnerEditCropSun);
+        Switch sowAfterFrostSwitch = findViewById(R.id.switchEditCropSowAfterFrost);
+
+        // Custom spinner style
+        Spinner typeSpinner = findViewById(R.id.spinnerEditCropType);
+        ArrayAdapter<CharSequence> cropTypeSpinnerAdapter =
+                ArrayAdapter.createFromResource(getContext(), R.array.crop_types,
+                        R.layout.spinner_crop_style);
+        typeSpinner.setAdapter(cropTypeSpinnerAdapter);
+
+        Spinner sunSpinner = findViewById(R.id.spinnerEditCropSun);
+        ArrayAdapter<CharSequence> sunLevelSpinnerAdapter =
+                ArrayAdapter.createFromResource(getContext(), R.array.crop_sun_levels,
+                        R.layout.spinner_crop_style);
+        sunSpinner.setAdapter(sunLevelSpinnerAdapter);
+
+        // Set spinners to correct selections
+        for (int i = 0; i < cropTypeSpinnerAdapter.getCount(); i++) {
+            String selection = (String) typeSpinner.getItemAtPosition(i);
+            if (selection.contains(crop.getTypeText())) {
+                typeSpinner.setSelection(i);
+                break;
+            }
+        }
+
+        for (int i = 0; i < sunLevelSpinnerAdapter.getCount(); i++) {
+            String selection = (String) sunSpinner.getItemAtPosition(i);
+            if (selection.contains(crop.getSunText())) {
+                sunSpinner.setSelection(i);
+                break;
+            }
+        }
 
         name.setText(crop.getName());
-        frost.setText(Integer.toString(crop.getDaysToPlantBeforeLastFrost()));
         germ.setText(Integer.toString(crop.getDaysToGerm()));
         harvest.setText(Integer.toString(crop.getDaysToHarvest()));
         notes.setText(crop.getNotes());
+
+        if (crop.getDaysToPlantBeforeLastFrost() == 0) {
+            sowAfterFrostSwitch.setChecked(true);
+            frost.setHint(R.string.sow_after_frost);
+        } else {
+            frost.setText(Integer.toString(crop.getDaysToPlantBeforeLastFrost()));
+        }
+
     }
 
     @Override
