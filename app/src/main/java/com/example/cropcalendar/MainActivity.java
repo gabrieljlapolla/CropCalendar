@@ -7,14 +7,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -29,7 +26,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
     final public static String FROST_SETTING = "firstFrostDate";
 
     // TODO: change switch color
@@ -37,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // TODO: Disable night mode cause it looks bad
+        // TODO: Implement dark mode theme and clean theme in general
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.cropcalendar.databinding.ActivityMainBinding binding =
+                ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -51,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController =
                 Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        // Uncomment to enable app bar
-        //NavigationUI.setupActionBarWithNavController(this,
-        //        navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         // Settings
@@ -115,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
         // Error checking for filled in fields and duplicate entries
         if (!allFieldsFilled) {
             // Not all fields filled
-            Toast.makeText(this, R.string.complete_all_fields, Toast.LENGTH_LONG).show();
+            Snackbar.make(view, R.string.complete_all_fields, Snackbar.LENGTH_SHORT)
+                    .setAnchorView(findViewById(R.id.nav_view)).show();
         } else {
             Crop crop = new Crop(name, type, Integer.parseInt(daysToPlantBeforeLastFrost),
                     Integer.parseInt(daysUntilGerm), Integer.parseInt(daysUntilHarvest),
@@ -124,10 +119,8 @@ public class MainActivity extends AppCompatActivity {
             CropDatabase cdb = CropDatabase.getInstance(this);
             if (cdb.addCrop(crop)) {
                 // Successfully added
-                // TODO: snackbar here too
-                //Toast.makeText(this, getString(R.string.crop_added, name),
-                 //       Toast.LENGTH_LONG).show();
-                Snackbar.make(view, getString(R.string.crop_added, name), Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, getString(R.string.crop_added, name), Snackbar.LENGTH_LONG)
+                        .setAnchorView(findViewById(R.id.nav_view)).show();
                 // Clear/reset all fields
                 nameEditText.getText().clear();
                 typeSpinner.setSelection(0);
@@ -138,16 +131,15 @@ public class MainActivity extends AppCompatActivity {
                 notesEditText.getText().clear();
                 // Hide keyboard
                 View focus = this.getCurrentFocus();
-                if (view != null) {
+                if (focus != null) {
                     InputMethodManager imm =
                             (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
                 }
             } else {
                 // Not all fields filled
-                // TODO: custom snackbar
-                //Toast.makeText(this, R.string.complete_all_fields, Toast.LENGTH_LONG).show();
-                Snackbar.make(view, R.string.complete_all_fields, Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(view, R.string.complete_all_fields, Snackbar.LENGTH_SHORT)
+                        .setAnchorView(findViewById(R.id.nav_view)).show();
             }
         }
     }
@@ -176,13 +168,15 @@ public class MainActivity extends AppCompatActivity {
             currentLastFrostDate.setText(
                     getString(R.string.current_frost_date, selectedLastFrostDate));
 
-            // Confirmation toast
-            Toast.makeText(this, R.string.done, Toast.LENGTH_LONG).show();
+            // Confirmation message
+            Snackbar.make(view, R.string.done, Snackbar.LENGTH_SHORT)
+                    .setAnchorView(findViewById(R.id.nav_view)).show();
         });
         // User selects cancel
-        builder.setNegativeButton(R.string.cancel, (dialogInterface, i) ->
-                Toast.makeText(this, R.string.no_changes,
-                        Toast.LENGTH_SHORT).show());
+        builder.setNegativeButton(R.string.cancel, (dialogInterface, i) -> {
+            Snackbar.make(view, R.string.no_changes, Snackbar.LENGTH_SHORT)
+                    .setAnchorView(findViewById(R.id.nav_view)).show();
+        });
         builder.create();
         builder.show();
     }
