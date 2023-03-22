@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!-- Text -->
     <style name="TextAppearance.CropStyle" parent="android:TextAppearance.DeviceDefault.Medium">
         <item name="android:fontFamily">@font/benchnine</item>
     </style>
@@ -19,23 +19,40 @@
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="Widget.BottomNavigationView"
-        parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="fontFamily">@font/benchnine</item>
-    </style>
-
-    <style name="Dialog.RoundedDialog" parent="Theme.AppCompat.Dialog">
+    <!-- Dialogs -->
+    <style name="Dialog.RoundedDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@drawable/dialog_rounded_corners_background</item>
+        <item name="fontStyle">@style/TextAppearance.CropStyle</item>
+        <item name="android:fontFamily">@font/benchnine</item>
+        <item name="android:textColorPrimary">@color/CropMaroon</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
     </style>
 
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/CropDarkGreen</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/CropMaroon</item>
+    </style>
+
+    <!-- Calendar -->
     <style name="TextAppearance.CalendarStyle" parent="android:TextAppearance.DeviceDefault.Medium">
         <item name="android:textColor">@color/black</item>
         <item name="android:background">@color/CropDarkGreen</item>
     </style>
 
+    <!-- Spinner -->
     <style name="SpinnerCropStyle" parent = "android:Widget.Material.DropDownItem.Spinner">
         <item name="android:textAppearance">@style/TextAppearance.CropStyle.Large</item>
         <item name="android:padding">10dp</item>
+    </style>
+
+    <!-- Bottom Navigation -->
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="fontFamily">@font/benchnine</item>
     </style>
 
     <style name="NavigationActive" parent="android:TextAppearance.DeviceDefault.Medium">
@@ -47,7 +64,14 @@
         <item name="fontFamily">@font/benchnine</item>
     </style>
 
-    <style name="DialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Bridge">
-
+    <!-- Snackbar -->
+    <style name="SnackbarStyle" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:backgroundTint">@color/CropMaroon</item>
     </style>
+
+    <style name="SnackbarTextStyle" parent="android:TextAppearance.DeviceDefault.Large">
+        <item name="android:fontFamily">@font/benchnine</item>
+        <item name="android:textColor">@color/CropWhite</item>
+    </style>
+
 </resources>

@@ -13,6 +13,10 @@
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="colorError">@color/CropMaroon</item>
+
+        <!-- Snackbar -->
+        <item name="snackbarStyle">@style/SnackbarStyle</item>
+        <item name="snackbarTextViewStyle">@style/SnackbarTextStyle</item>
     </style>
 
     <style name="Theme.CalendarTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
