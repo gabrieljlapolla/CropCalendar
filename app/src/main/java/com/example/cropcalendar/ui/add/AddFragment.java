@@ -29,13 +29,13 @@ public class AddFragment extends Fragment {
         binding = FragmentAddBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textViewFrost;
+        final TextView textView = binding.textViewAddFrost;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
         // Set listener for switch to disable editText if enabled
-        Switch sowAfterFrostSwitch = root.findViewById(R.id.switchSowAfterFrost);
+        Switch sowAfterFrostSwitch = root.findViewById(R.id.switchAddSowAfterFrost);
         sowAfterFrostSwitch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
-            EditText frostEditText = root.findViewById(R.id.editTextCropFrost);
+            EditText frostEditText = root.findViewById(R.id.editTextAddFrost);
             if (isChecked) {
                 frostEditText.setHint(R.string.sow_after_frost);
                 frostEditText.setError(null); // Clear any error
@@ -47,13 +47,13 @@ public class AddFragment extends Fragment {
         });
 
         // Custom spinner style
-        Spinner cropTypeSpinner = root.findViewById(R.id.spinnerCropType);
+        Spinner cropTypeSpinner = root.findViewById(R.id.spinnerAddType);
         ArrayAdapter<CharSequence> cropTypeSpinnerAdapter =
                 ArrayAdapter.createFromResource(root.getContext(), R.array.crop_types,
                         R.layout.spinner_crop_style);
         cropTypeSpinner.setAdapter(cropTypeSpinnerAdapter);
 
-        Spinner sunLevelSpinner = root.findViewById(R.id.spinnerCropSunLevels);
+        Spinner sunLevelSpinner = root.findViewById(R.id.spinnerAddSun);
         ArrayAdapter<CharSequence> sunLevelSpinnerAdapter =
                 ArrayAdapter.createFromResource(root.getContext(), R.array.crop_sun_levels,
                         R.layout.spinner_crop_style);

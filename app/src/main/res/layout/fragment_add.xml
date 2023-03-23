@@ -29,14 +29,14 @@
             android:scrollbars="none">
 
             <TextView
-                android:id="@+id/textViewFrostDate"
+                android:id="@+id/textViewAddName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/crop_name"
                 android:textAppearance="@style/TextAppearance.CropStyle.Large" />
 
             <EditText
-                android:id="@+id/editTextFrostDate"
+                android:id="@+id/editTextAddName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -49,7 +49,7 @@
                 android:layout_height="24dp" />
 
             <TextView
-                android:id="@+id/textViewCropType"
+                android:id="@+id/textViewAddType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/benchnine"
@@ -57,7 +57,7 @@
                 android:textAppearance="@style/TextAppearance.CropStyle.Large" />
 
             <Spinner
-                android:id="@+id/spinnerCropType"
+                android:id="@+id/spinnerAddType"
                 style="@"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textViewFrost"
+                    android:id="@+id/textViewAddFrost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/crop_days_before_frost"
@@ -84,24 +84,24 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editTextCropFrost"
+                    android:id="@+id/editTextAddFrost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/enter_text"
                     android:inputType="number"
                     android:textAppearance="@style/TextAppearance.CropStyle"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewFrost" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewAddFrost" />
 
                 <Switch
-                    android:id="@+id/switchSowAfterFrost"
+                    android:id="@+id/switchAddSowAfterFrost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sow_after_frost"
                     android:textAppearance="@style/TextAppearance.CropStyle.Hint"
-                    app:layout_constraintBottom_toBottomOf="@+id/textViewFrost"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewAddFrost"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textViewFrost" />
+                    app:layout_constraintTop_toTopOf="@+id/textViewAddFrost" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Space
@@ -109,14 +109,14 @@
                 android:layout_height="24dp" />
 
             <TextView
-                android:id="@+id/textViewGermination"
+                android:id="@+id/textViewAddGerm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/crop_germination_time"
                 android:textAppearance="@style/TextAppearance.CropStyle.Large" />
 
             <EditText
-                android:id="@+id/editTextGermination"
+                android:id="@+id/editTextAddGerm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -129,14 +129,14 @@
                 android:layout_height="24dp" />
 
             <TextView
-                android:id="@+id/textViewHarvest"
+                android:id="@+id/textViewAddHarvest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/crop_harvest_time"
                 android:textAppearance="@style/TextAppearance.CropStyle.Large" />
 
             <EditText
-                android:id="@+id/editTextHarvest"
+                android:id="@+id/editTextAddHarvest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -149,14 +149,14 @@
                 android:layout_height="24dp" />
 
             <TextView
-                android:id="@+id/textViewCropSunAdd"
+                android:id="@+id/textViewAddSun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sun_level"
                 android:textAppearance="@style/TextAppearance.CropStyle.Large" />
 
             <Spinner
-                android:id="@+id/spinnerCropSunLevels"
+                android:id="@+id/spinnerAddSun"
                 style="@"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -170,14 +170,14 @@
                 android:layout_height="24dp" />
 
             <TextView
-                android:id="@+id/textViewCropSun"
+                android:id="@+id/textViewAddNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/crop_notes"
                 android:textAppearance="@style/TextAppearance.CropStyle.Large" />
 
             <EditText
-                android:id="@+id/editTextMultiLineCropNotes"
+                android:id="@+id/editTextMultiLineAddNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -191,7 +191,7 @@
                 android:layout_height="24dp" />
 
             <Button
-                android:id="@+id/buttonAddCropSubmit"
+                android:id="@+id/buttonAddSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

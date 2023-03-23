@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.Switch;
 import android.widget.TextView;
 

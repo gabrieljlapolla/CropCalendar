@@ -41,7 +41,7 @@ public class CalendarFragment extends Fragment {
         binding = FragmentCalendarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        noResults = root.findViewById(R.id.textViewNoResults);
+        noResults = root.findViewById(R.id.textViewCalendarNoResults);
 
         setAdapter(root);
         viewAllCrops(root); // By default show all crops
@@ -49,9 +49,9 @@ public class CalendarFragment extends Fragment {
 
         // TODO: DatePicker dateFilter = root.findViewById(R.id.lastFrostDatePicker);
         //dateFilter.setOnDateChangedListener(this::selectDate);
-        Button viewAllButton = root.findViewById(R.id.buttonAllCrops);
+        Button viewAllButton = root.findViewById(R.id.buttonCalendarAll);
         viewAllButton.setOnClickListener(this::viewAllCrops);
-        Button filterButton = root.findViewById(R.id.buttonFilters);
+        Button filterButton = root.findViewById(R.id.buttonCalendarFilters);
         filterButton.setOnClickListener(this::selectFilters);
 
         resetFilters();
@@ -62,7 +62,7 @@ public class CalendarFragment extends Fragment {
      * Creates recycler adapter and adds it to the recycler view
      */
     private void setAdapter(View view) {
-        recyclerView = view.findViewById(R.id.recyclerViewCropResults);
+        recyclerView = view.findViewById(R.id.recyclerViewCalendar);
         recyclerAdapter adapter = new recyclerAdapter(crops);
         LinearLayoutManager layoutManager = new LinearLayoutManager((getContext()));
         recyclerView.setLayoutManager(layoutManager);

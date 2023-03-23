@@ -5,22 +5,14 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.ContextThemeWrapper;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -72,11 +64,11 @@ public class EditDialog extends Dialog implements DialogInterface.OnClickListene
                             // Success
                             Snackbar.make(view, context.getString(R.string.delete_success,
                                     crop.getName()), Snackbar.LENGTH_SHORT)
-                                    .setAnchorView(findViewById(R.id.nav_view)).show();
+                                    .setAnchorView(findViewById(R.id.bottomNavView)).show();
                         } else {
                             Snackbar.make(view, context.getString(R.string.delete_failure,
                                     crop.getName()), Snackbar.LENGTH_SHORT)
-                                    .setAnchorView(findViewById(R.id.nav_view)).show();
+                                    .setAnchorView(findViewById(R.id.bottomNavView)).show();
                         }
                         // Reload activity to update crop data
                         // TODO: reload to reflect updated crop list

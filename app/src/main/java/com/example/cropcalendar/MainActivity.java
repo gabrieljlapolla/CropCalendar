@@ -40,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
                 ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        BottomNavigationView navView = findViewById(R.id.bottomNavView);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_calendar, R.id.navigation_add, R.id.navigation_settings)
                 .build();
         NavController navController =
-                Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+                Navigation.findNavController(this, R.id.navHostFragmentMainActivity);
+        NavigationUI.setupWithNavController(binding.bottomNavView, navController);
 
         // Settings
         SharedPreferences sp = getSharedPreferences("settings", 0);
@@ -64,14 +64,14 @@ public class MainActivity extends AppCompatActivity {
     public void createCrop(View view) {
         boolean allFieldsFilled = true;
 
-        EditText nameEditText = findViewById(R.id.editTextFrostDate);
-        Spinner typeSpinner = findViewById(R.id.spinnerCropType);
-        EditText frostEditText = findViewById(R.id.editTextCropFrost);
-        Switch sowAfterFrostSwitch = findViewById(R.id.switchSowAfterFrost);
-        EditText germEditText = findViewById(R.id.editTextGermination);
-        EditText harvestEditText = findViewById(R.id.editTextHarvest);
-        Spinner sunSpinner = findViewById(R.id.spinnerCropSunLevels);
-        EditText notesEditText = findViewById(R.id.editTextMultiLineCropNotes);
+        EditText nameEditText = findViewById(R.id.editTextAddName);
+        Spinner typeSpinner = findViewById(R.id.spinnerAddType);
+        EditText frostEditText = findViewById(R.id.editTextAddFrost);
+        Switch sowAfterFrostSwitch = findViewById(R.id.switchAddSowAfterFrost);
+        EditText germEditText = findViewById(R.id.editTextAddGerm);
+        EditText harvestEditText = findViewById(R.id.editTextAddHarvest);
+        Spinner sunSpinner = findViewById(R.id.spinnerAddSun);
+        EditText notesEditText = findViewById(R.id.editTextMultiLineAddNotes);
 
         String name = nameEditText.getText().toString().trim();
         String typeString = typeSpinner.getSelectedItem().toString();
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         if (!allFieldsFilled) {
             // Not all fields filled
             Snackbar.make(view, R.string.complete_all_fields, Snackbar.LENGTH_SHORT)
-                    .setAnchorView(findViewById(R.id.nav_view)).show();
+                    .setAnchorView(findViewById(R.id.bottomNavView)).show();
         } else {
             Crop crop = new Crop(name, type, Integer.parseInt(daysToPlantBeforeLastFrost),
                     Integer.parseInt(daysUntilGerm), Integer.parseInt(daysUntilHarvest),
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             if (cdb.addCrop(crop)) {
                 // Successfully added
                 Snackbar.make(view, getString(R.string.crop_added, name), Snackbar.LENGTH_LONG)
-                        .setAnchorView(findViewById(R.id.nav_view)).show();
+                        .setAnchorView(findViewById(R.id.bottomNavView)).show();
                 // Clear/reset all fields
                 nameEditText.getText().clear();
                 typeSpinner.setSelection(0);
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 // Not all fields filled
                 Snackbar.make(view, R.string.complete_all_fields, Snackbar.LENGTH_SHORT)
-                        .setAnchorView(findViewById(R.id.nav_view)).show();
+                        .setAnchorView(findViewById(R.id.bottomNavView)).show();
             }
         }
     }
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
         builder.setPositiveButton(R.string.save, (dialogInterface, i) -> {
 
-            DatePicker frostDatePicker = findViewById(R.id.lastFrostDatePicker);
+            DatePicker frostDatePicker = findViewById(R.id.datePickerSettingsFrost);
 
             String selectedLastFrostDate = (frostDatePicker.getMonth() + 1) +
                     "/" + frostDatePicker.getDayOfMonth();
@@ -170,12 +170,12 @@ public class MainActivity extends AppCompatActivity {
 
             // Confirmation message
             Snackbar.make(view, R.string.done, Snackbar.LENGTH_SHORT)
-                    .setAnchorView(findViewById(R.id.nav_view)).show();
+                    .setAnchorView(findViewById(R.id.bottomNavView)).show();
         });
         // User selects cancel
         builder.setNegativeButton(R.string.cancel, (dialogInterface, i) -> {
             Snackbar.make(view, R.string.no_changes, Snackbar.LENGTH_SHORT)
-                    .setAnchorView(findViewById(R.id.nav_view)).show();
+                    .setAnchorView(findViewById(R.id.bottomNavView)).show();
         });
         builder.create();
         builder.show();

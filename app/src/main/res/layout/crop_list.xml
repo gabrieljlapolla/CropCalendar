@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewCropListName"
+        android:id="@+id/textViewListName"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeMaxTextSize="32dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/buttonCropListDetails"
+        android:id="@+id/buttonListDetails"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="?attr/colorPrimaryVariant"
@@ -74,7 +74,7 @@
         app:srcCompat="@drawable/ic_plant" />
 
     <ImageButton
-        android:id="@+id/buttonCropListEdit"
+        android:id="@+id/buttonListEdit"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="?attr/colorPrimaryVariant"
@@ -84,11 +84,11 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterIcon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCropListDetails"
+        app:layout_constraintTop_toBottomOf="@+id/buttonListDetails"
         app:srcCompat="@drawable/ic_gears" />
 
     <TextView
-        android:id="@+id/textCropHarvest"
+        android:id="@+id/textViewListHarvest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalCenter" />
 
     <TextView
-        android:id="@+id/cropHarvestDate"
+        android:id="@+id/textViewListHarvestDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/benchnine"
@@ -109,10 +109,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterSecondThird"
-        app:layout_constraintTop_toBottomOf="@+id/textCropHarvest" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewListHarvest" />
 
     <TextView
-        android:id="@+id/cropGermDate"
+        android:id="@+id/textViewListGermDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/benchnine"
@@ -121,10 +121,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterSecondThird"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterFirstThird"
-        app:layout_constraintTop_toBottomOf="@+id/textCropGerm" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewListGerm" />
 
     <TextView
-        android:id="@+id/textCropGerm"
+        android:id="@+id/textViewListGerm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -136,7 +136,7 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalCenter" />
 
     <TextView
-        android:id="@+id/textCropPlant"
+        android:id="@+id/textViewListPlant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -148,7 +148,7 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontalCenter" />
 
     <TextView
-        android:id="@+id/cropPlantDate"
+        android:id="@+id/textViewListPlantDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/benchnine"
@@ -157,7 +157,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenterFirstThird"
         app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenterIcon"
-        app:layout_constraintTop_toBottomOf="@+id/textCropPlant" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewListPlant" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineHorizontalCenter"
@@ -168,7 +168,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/imageViewSunLevel"
+        android:id="@+id/imageViewListSun"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"

@@ -7,7 +7,7 @@
     tools:context=".ui.settings.SettingsFragment">
 
     <TextView
-        android:id="@+id/textViewSetFirstFrostDate"
+        android:id="@+id/textViewSettingsFrost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/benchnine"
@@ -22,23 +22,24 @@
         android:id="@+id/textViewCurrentLastFrostDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/lastFrostDatePicker"
+        app:layout_constraintBottom_toTopOf="@+id/datePickerSettingsFrost"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <DatePicker
-        android:id="@+id/lastFrostDatePicker"
+        android:id="@+id/datePickerSettingsFrost"
+        style="@android:style/Widget.Material.Light.DatePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSaveSettings"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSettingsSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonSaveSettings"
+        android:id="@+id/buttonSettingsSave"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

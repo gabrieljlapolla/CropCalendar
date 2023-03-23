@@ -1,24 +1,15 @@
 package com.example.cropcalendar;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -79,14 +70,14 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.MyView
 
         public MyViewHolder(View view) {
             super(view);
-            nameText = view.findViewById(R.id.textViewCropListName);
-            plantDateText = view.findViewById(R.id.cropPlantDate);
-            germDateText = view.findViewById(R.id.cropGermDate);
-            harvestDateText = view.findViewById(R.id.cropHarvestDate);
-            sunIcon = view.findViewById(R.id.imageViewSunLevel);
+            nameText = view.findViewById(R.id.textViewListName);
+            plantDateText = view.findViewById(R.id.textViewListPlantDate);
+            germDateText = view.findViewById(R.id.textViewListGermDate);
+            harvestDateText = view.findViewById(R.id.textViewListHarvestDate);
+            sunIcon = view.findViewById(R.id.imageViewListSun);
 
             // View crop details
-            view.findViewById(R.id.buttonCropListDetails).setOnClickListener(buttonView -> {
+            view.findViewById(R.id.buttonListDetails).setOnClickListener(buttonView -> {
                 Context context = buttonView.getContext();
 
                 // Dialog to show details
@@ -97,7 +88,7 @@ public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.MyView
             });
 
             // Edit crop
-            view.findViewById(R.id.buttonCropListEdit).setOnClickListener(buttonView -> {
+            view.findViewById(R.id.buttonListEdit).setOnClickListener(buttonView -> {
                 Context context = buttonView.getContext();
 
                 // Dialog to edit crop
