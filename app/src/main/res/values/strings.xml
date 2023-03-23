@@ -46,6 +46,7 @@
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
     <string name="done">Done</string>
+    <string name="yes">Yes</string>
     <string name="save_changes">Save changes?</string>
     <string name="set_frost_date">Set Last Frost Date</string>
     <string name="current_frost_date">Current Last Frost Date: %s</string>
@@ -57,4 +58,10 @@
     <string name="edit_crop">Edit Crop</string>
     <string name="delete_crop">Delete Crop</string>
     <string name="sow_after_frost">Sow after Last Frost</string>
+    <string name="delete_confirmation">Delete?</string>
+    <string name="delete_confirmation_desc">Are you sure you would like to delete %s?</string>
+    <string name="delete_success">%s has been deleted</string>
+    <string name="delete_failure">%s could not be deleted</string>
+    <string name="submit_confirmation">Submit?</string>
+    <string name="submit_confirmation_desc">Are you sure you would like to save the changes to %s?</string>
 </resources>

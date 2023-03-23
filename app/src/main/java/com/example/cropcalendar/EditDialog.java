@@ -7,16 +7,22 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class EditDialog extends Dialog implements DialogInterface.OnClickListener {
 
@@ -32,9 +38,11 @@ public class EditDialog extends Dialog implements DialogInterface.OnClickListene
     // TODO: make this dialog prettier
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Context context = getContext();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_dialog);
         loadCropInfo();
+        // Switch to plant after frost date
         Switch sowAfterFrostSwitch = findViewById(R.id.switchEditCropSowAfterFrost);
         sowAfterFrostSwitch.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             EditText frostEditText = findViewById(R.id.editTextEditCropFrost);
@@ -46,6 +54,59 @@ public class EditDialog extends Dialog implements DialogInterface.OnClickListene
                 frostEditText.setHint(R.string.enter_text);
                 frostEditText.setEnabled(true);
             }
+        });
+        // Exit dialog not saving
+        Button cancelButton = findViewById(R.id.buttonEditCropCancel);
+        cancelButton.setOnClickListener(view -> {
+            cancel();
+        });
+        // Delete crop
+        Button deleteButton = findViewById(R.id.buttonEditCropDelete);
+        deleteButton.setOnClickListener(view -> {
+            AlertDialog.Builder confirmationDialog = new AlertDialog.Builder(new
+                    ContextThemeWrapper(context, R.style.Dialog_RoundedDialog));
+            confirmationDialog.setTitle(R.string.delete_confirmation)
+                    .setMessage(context.getString(R.string.delete_confirmation_desc, crop.getName()))
+                    .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
+                        if (CropDatabase.getInstance(context).deleteCrop(crop.getName())) {
+                            // Success
+                            Snackbar.make(view, context.getString(R.string.delete_success,
+                                    crop.getName()), Snackbar.LENGTH_SHORT)
+                                    .setAnchorView(findViewById(R.id.nav_view)).show();
+                        } else {
+                            Snackbar.make(view, context.getString(R.string.delete_failure,
+                                    crop.getName()), Snackbar.LENGTH_SHORT)
+                                    .setAnchorView(findViewById(R.id.nav_view)).show();
+                        }
+                        // Reload activity to update crop data
+                        // TODO: reload to reflect updated crop list
+                        /*Activity activity = getOwnerActivity();
+                        getOwnerActivity().finish();
+                        activity.overridePendingTransition(0, 0);
+                        activity.startActivity(activity.getIntent());
+                        activity.overridePendingTransition(0, 0);*/
+                    })
+                    .setNegativeButton(R.string.cancel, null)
+                    .show();
+        });
+        // Submit crop details
+        Button submitButton = findViewById(R.id.buttonEditCropSubmit);
+        submitButton.setOnClickListener(view -> {
+            AlertDialog.Builder confirmationDialog = new AlertDialog.Builder(new
+                    ContextThemeWrapper(context, R.style.Dialog_RoundedDialog));
+            confirmationDialog.setTitle(R.string.submit_confirmation)
+                    .setMessage(context.getString(R.string.submit_confirmation_desc, crop.getName()))
+                    .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
+                        // TODO: finish submit crop edits
+                        // Reload activity to update crop data
+                        Activity activity = getOwnerActivity();
+                        activity.finish();
+                        activity.overridePendingTransition(0, 0);
+                        activity.startActivity(activity.getIntent());
+                        activity.overridePendingTransition(0, 0);
+                    })
+                    .setNegativeButton(R.string.cancel, null)
+                    .show();
         });
     }
 
