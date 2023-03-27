@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class CropDatabase extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "crops.db";
-    private static final int VERSION = 4;
+    private static final int VERSION = 5;
 
     private static CropDatabase cropDb;
 
@@ -98,8 +98,8 @@ public class CropDatabase extends SQLiteOpenHelper {
         values.put(CropTable.COL_NAME, crop.getName());
         values.put(CropTable.COL_TYPE, crop.getType().ordinal());
         values.put(CropTable.COL_DAYS_TO_PLANT_BEFORE_FROST, crop.getDaysToPlantBeforeLastFrost());
-        values.put(CropTable.COL_DAYS_UNTIL_GERM, crop.getDaysToHarvest());
         values.put(CropTable.COL_DAYS_UNTIL_HARVEST, crop.getDaysToGerm());
+        values.put(CropTable.COL_DAYS_UNTIL_GERM, crop.getDaysToHarvest());
         values.put(CropTable.COL_SUN, crop.getSunText());
         values.put(CropTable.COL_NOTES, crop.getNotes());
         long id = db.insert(CropTable.TABLE, null, values);
@@ -123,8 +123,8 @@ public class CropDatabase extends SQLiteOpenHelper {
                 crops.add(new Crop(cursor.getString(0), // name
                         Crop.cropType.values()[cursor.getInt(1)], // type
                         cursor.getInt(2), // days to plant before frost
-                        cursor.getInt(3), // days until germ
-                        cursor.getInt(4), // days until harvest
+                        cursor.getInt(4), // days until germ
+                        cursor.getInt(3), // days until harvest
                         Crop.getSunLevelFromText(cursor.getString(5)), // sun
                         cursor.getString(6)));
             } while (cursor.moveToNext());
