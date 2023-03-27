@@ -14,15 +14,15 @@
         <!-- Customize your theme here. -->
         <item name="colorError">@color/CropMaroon</item>
 
+        <!-- Text Font -->
+        <item name="android:fontFamily">@font/benchnine</item>
+
         <!-- Snackbar -->
         <item name="snackbarStyle">@style/SnackbarStyle</item>
         <item name="snackbarTextViewStyle">@style/SnackbarTextStyle</item>
 
         <!-- EditText -->
         <item name="editTextStyle">@style/EditTextStyle</item>
-
-        <!-- DatePicker -->
-        <item name="android:datePickerStyle">@style/DatePickerStyle</item>
 
         <!-- Splash Screen -->
         <item name="android:windowSplashScreenBackground">@color/CropDarkGreen</item>
