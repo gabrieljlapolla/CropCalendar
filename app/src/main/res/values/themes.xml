@@ -21,17 +21,11 @@
         <!-- EditText -->
         <item name="editTextStyle">@style/EditTextStyle</item>
 
-    </style>
+        <!-- DatePicker -->
+        <item name="android:datePickerStyle">@style/DatePickerStyle</item>
 
-    <style name="Theme.CalendarTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:calendarViewStyle">@style/Widget.CalendarView.Custom</item>
-    </style>
+        <!-- Splash Screen -->
+        <item name="android:windowSplashScreenBackground">@color/CropDarkGreen</item>
 
-    <style name="Widget.CalendarView.Custom" parent="android:Widget.DeviceDefault.CalendarView">
-        <!-- CalendarView -->
-        <item name="android:focusedMonthDateColor">@color/CropMaroon</item>
-        <item name="android:weekNumberColor">@color/CropMaroon</item>
-        <item name="android:weekDayTextAppearance">@style/TextAppearance.CalendarStyle</item>
-        <item name="android:dateTextAppearance">@style/TextAppearance.CalendarStyle</item>
     </style>
 </resources>
